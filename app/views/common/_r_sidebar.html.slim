@@ -1,0 +1,62 @@
+h4
+  | Топ видео
+  h2
+    br
+    a[href="http://red-news.ru/oglashenie-prigovora-evgenii-vasilevoj/"]
+    center
+      img[src="http://red-news.ru/wp-content/plugins/automatic-youtube-video-posts/tools/timthumb.php?src=http://img.youtube.com/vi/g8hwPUg8Hi4/0.jpg&w=&h=&zc=0" alt="" title=""]
+      br
+      | Оглашение приговора Евгении Васильевой
+    br
+    ul.sidebar
+      li#text-2.widget.widget_text
+        h2.widgettitle
+          | Опрос
+        .textwidget
+          img[src="http://red-news.ru/wp-content/themes/red-news/img/promo1.jpg" alt="" style="max-width:100%;height:auto;margin-top:8px;"]
+          br
+
+          center
+            a[href="http://topblognews.ru/politika/trudno-by-t-bogom/"]
+              | Просмотр фильма
+      li#polls-widget-2.widget.widget_polls-widget
+        #polls-1.wp-polls
+          form#polls_form_1.wp-polls-form[action="/index.php" method="post"]
+            p[style="display: none;"]
+              input#poll_1_nonce[type="hidden" name="wp-polls-nonce" value="8b863154ee"]
+            p[style="display: none;"]
+              input[type="hidden" name="poll_id" value="1"]
+            p[style="text-align: center;"]
+              strong
+                | Смотрели ли вы фильм "Президент"?
+            #polls-1-ans.wp-polls-ans
+              ul.wp-polls-ul
+                li
+                  input#poll-answer-1[type="radio" name="poll_1" value="1"]
+                  label[for="poll-answer-1"]
+                    | Да
+                li
+                  input#poll-answer-2[type="radio" name="poll_1" value="2"]
+                  label[for="poll-answer-2"]
+                    | Нет
+                li
+                  input#poll-answer-3[type="radio" name="poll_1" value="3"]
+                  label[for="poll-answer-3"]
+                    | Планирую посмотреть
+              p[style="text-align: center;"]
+                input.Buttons[type="button" name="vote" value="   Голосовать   " onclick="poll_vote(1);"]
+              p[style="text-align: center;"]
+                a[href="#ViewPollResults" onclick="poll_result(1); return false;" title="Просмотр результатов голосования"]
+                  | Просмотр результатов
+        #polls-1-loading.wp-polls-loading
+          img.wp-polls-image[src="http://red-news.ru/wp-content/plugins/wp-polls/images/loading.gif" width="16" height="16" alt="Loading ..." title="Loading ..."]
+          |  Loading ...
+    br
+    #meteoprog_informer_standart[style="width:100%;" data-params="boy:Moscow:240x90:white:48x50"]
+      a[href="http://www.meteoprog.ua/ru/"]
+        | погода
+      br
+      a[href="http://www.meteoprog.ua/ru/weather/Moscow/"]
+        | Погода в Москве
+      br
+    script[src="http://www.meteoprog.ua/ru/weather/informer/standart.js"]
