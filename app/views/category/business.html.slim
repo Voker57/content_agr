@@ -2,7 +2,7 @@
   h1 style="(color:#787878;font-family:times new roman), serif;margin:0 0 10px 0;"  Новости науки и техники
   .popular-block.cat
     h2
-    - @political_articles.each do | article |
+    - @business_articles.each do | article |
       a href="#{ article.url_title }"
         img.attachment-small-thumb.wp-post-image height="70" src="#{ article.preview_url }" width="100" /
         p #{ article.article_title }
