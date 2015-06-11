@@ -15,6 +15,7 @@ class CategoryController < ApplicationController
   end
 
   def science
+    @science_articles = Article.where( science: true )
   end
 
   def sport
