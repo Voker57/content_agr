@@ -3,58 +3,19 @@ h2[style="color:#787878;font-family:times new roman, serif;text-align:center;mar
 .jcarousel-wrapper
   .jcarousel
     ul
-      -@hot_articles.each do | article |
       li
-        a[href="#{ article.url_title }"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
+      - @hot_articles.each do | article |
+        li
+          a[href="#{ article.url_title }"]
+            img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
           br
-          | article.article_title
+          | "#{article.article_title}"
       end
-      li
-        a[href="http://red-news.ru/geimery-ekranizovali-grand-theft-auto/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/5631e39776155b91fe1bf4111af73fd9.jpg" alt="5631e39776155b91fe1bf4111af73fd9"]
-          br
-          | Геймеры экранизовали Grand Theft Auto
-      li
-        a[href="http://red-news.ru/neirofiziologi-naychilis-vvodit-elektroniky-v-mozg-pri-pomoshi-shprica/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/945e33cdb18ebe5b9e2bea3e80ac6819.jpg" alt="945e33cdb18ebe5b9e2bea3e80ac6819"]
-          br
-          | Нейрофизиологи научились вводить электронику в мозг при помощи шприца
-      li
-        a[href="http://red-news.ru/sozdateli-world-of-tanks-vozrodiat-klassicheskyu-strategiu/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/225492746b58442618d3822827ed915a.jpg" alt="225492746b58442618d3822827ed915a"]
-          br
-          | Создатели World of Tanks возродят классическую стратегию
-      li
-        a[href="http://red-news.ru/spytnik-na-solnechnyh-parysah-sdelal-pervoe-selfi/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/ad71ff79e41513f8f8388d79c86c2494.jpg" alt="ad71ff79e41513f8f8388d79c86c2494"]
-          br
-          | Спутник на солнечных парусах сделал первое селфи
-      li
-        a[href="http://red-news.ru/dokazany-obshie-geneticheskie-istoki-shizofrenii-i-tvorchestva/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/6ebc771b0a811d8e7f935859d879ac8b.jpg" alt="6ebc771b0a811d8e7f935859d879ac8b"]
-          br
-          | Доказаны общие генетические истоки шизофрении и творчества
-      li
-        a[href="http://red-news.ru/ychenye-obiasnili-besslednoe-ischeznovenie-malaiziiskogo-boeing/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/fc82f6f03bec4f2269fcad9acb444f65.jpg" alt="fc82f6f03bec4f2269fcad9acb444f65"]
-          br
-          | Ученые объяснили бесследное исчезновение малайзийского Boeing
-      li
-        a[href="http://red-news.ru/apple-anonsirovala-platnyi-myzykalnyi-servis-apple-music/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/431deefbdec40d244346df60a801beff.jpg" alt="431deefbdec40d244346df60a801beff"]
-          br
-          | Apple анонсировала платный музыкальный сервис Apple Music
-      li
-        a[href="http://red-news.ru/mks-izbejala-stolknoveniia-s-oblomkom-amerikanskogo-spytnika/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/d535c5a63f26786c6620220aabb899da.jpg" alt="d535c5a63f26786c6620220aabb899da"]
-          br
-          | МКС избежала столкновения с обломком американского спутника
-      li
-        a[href="http://red-news.ru/apple-predstavila-novyu-mobilnyu-platformy-ios-9/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/b3df3c9392be513c12b9686b85893959.jpg" alt="b3df3c9392be513c12b9686b85893959"]
-          br
-          | Apple представила новую мобильную платформу iOS 9
+      / li
+      /   a[href="http://red-news.ru/apple-predstavila-novyu-mobilnyu-platformy-ios-9/"]
+      /     img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/b3df3c9392be513c12b9686b85893959.jpg" alt="b3df3c9392be513c12b9686b85893959"]
+      /     br
+      /     | Apple представила новую мобильную платформу iOS 9
 
   a.jcarousel-control-prev[href="#"]
   a.jcarousel-control-next[href="#"]
