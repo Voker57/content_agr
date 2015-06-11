@@ -2,9 +2,9 @@
   .row
     .col-xs-18
       a[href='/']
-        img[src="http://red-news.ru/wp-content/themes/red-news/img/logo.jpg" alt="Red News"]
+        =image_tag'logo.jpg'
       .time
-        | Среда, 10.06.15, 5:27
+        | #{ Time.now.to_formatted_s(:long_ordinal) }
       div[style="float:right;margin:25px 0 0 0;"]
         script[type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"]
         .yashare-auto-init[data-yasharel10n="ru" data-yasharetype="link" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,moimir"]
