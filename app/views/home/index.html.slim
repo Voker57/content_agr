@@ -3,11 +3,13 @@ h2[style="color:#787878;font-family:times new roman, serif;text-align:center;mar
 .jcarousel-wrapper
   .jcarousel
     ul
+      -@hot_articles.each do | article |
       li
-        a[href="http://red-news.ru/v-kolizee-vosstanovili-lift-dlia-dikih-zverei/"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/7146368ef030cf5eb394a44549f9b1b6.jpg" alt="7146368ef030cf5eb394a44549f9b1b6"]
+        a[href="#{ article.url_title }"]
+          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
           br
-          | В Колизее восстановили лифт для диких зверей
+          | article.article_title
+      end
       li
         a[href="http://red-news.ru/geimery-ekranizovali-grand-theft-auto/"]
           img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/5631e39776155b91fe1bf4111af73fd9.jpg" alt="5631e39776155b91fe1bf4111af73fd9"]
@@ -53,6 +55,7 @@ h2[style="color:#787878;font-family:times new roman, serif;text-align:center;mar
           img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/b3df3c9392be513c12b9686b85893959.jpg" alt="b3df3c9392be513c12b9686b85893959"]
           br
           | Apple представила новую мобильную платформу iOS 9
+
   a.jcarousel-control-prev[href="#"]
   a.jcarousel-control-next[href="#"]
 .row
