@@ -2,7 +2,7 @@
   .row
     .col-xs-18
       a[href='/']
-        =image_tag'logo.jpg'
+        =image_tag( 'logo.jpg' )
       .time
         | #{ Time.now.to_formatted_s(:long_ordinal) }
       div[style="float:right;margin:25px 0 0 0;"]
