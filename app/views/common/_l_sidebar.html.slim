@@ -1,14 +1,15 @@
 h4
   | Самое читаемое
   h2
+  .post-block
+      h2
+      - @top_read_articles.each do | article |
+        a[href="#{ article.url_title }"]
+          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
+        br
+        | #{article.article_title}
+      end
   .popular-block
-    a href="http://red-news.ru/lenovo-anonsirovala-smartfon-s-predystanovlennoi-igroi-world-of-tanks/"
-      img.attachment-small-thumb.wp-post-image alt="" height="70" src="http://red-news.ru/wp-content/themes/red-news/img/nophoto.jpg" width="100" /
-      | Lenovo анонсировала смартфон с предустановленной игрой World of Tanks
-  .popular-block
-    a href="http://red-news.ru/videozapis-s-ypavshego-na-zemlu-obtekatelia-rakety-falcon-9-nashli-v-more/"
-      img.attachment-small-thumb.wp-post-image alt="c526229f53248befbeae4df0d618b11b" height="70" src="http://red-news.ru/wp-content/uploads/2015/06/c526229f53248befbeae4df0d618b11b-100x70.jpg" width="100" /
-      | Видеозапись с упавшего на Землю обтекателя ракеты Falcon 9 нашли в море
   ul.sidebar
     li#calendar-2.widget.widget_calendar
       h2.widgettitle Календарь
