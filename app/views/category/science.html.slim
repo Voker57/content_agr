@@ -3,7 +3,7 @@
   .popular-block.cat
     h2
     - @science_articles.each do | article |
-      a href="#{ article.url_title }"
+      a href= "#{article.id}, { controller: 'articles', action: 'show' }"
         img.attachment-small-thumb.wp-post-image height="70" src="#{ article.preview_url }" width="100" /
         p #{ article.article_title }
     end

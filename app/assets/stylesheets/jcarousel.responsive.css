@@ -1,0 +1,114 @@
+.jcarousel-wrapper {
+    margin: 20px auto 35px auto;
+    position: relative;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width:85%;
+  margin:auto;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 200px;
+    float: left;
+  padding:0 10px;
+  text-align:center;
+  font-size:15px;
+
+}
+
+.jcarousel img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto !important;
+  margin-bottom:15px;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    width: 32px;
+    height: 52px;
+    color: #fff;
+    text-decoration: none;
+  max-width:7%;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+  background:url(../img/larr.jpg) top left no-repeat;
+  background-size:100% auto;
+}
+
+.jcarousel-control-next {
+    right: 15px;
+  background:url(../img/rarr.jpg) top left no-repeat;
+  background-size:100% auto;
+}
+.jcarousel-control-prev:hover {
+  background:url(../img/larrh.jpg) top left no-repeat;
+}
+
+.jcarousel-control-next:hover {
+  background:url(../img/rarrh.jpg) top left no-repeat;
+}
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    margin: 0;
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 11px;
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+
+    background: #fff;
+    color: #4E443C;
+    border-radius: 10px;
+    text-indent: -9999px;
+
+    margin-right: 7px;
+
+
+    -webkit-box-shadow: 0 0 2px #4E443C;
+    -moz-box-shadow: 0 0 2px #4E443C;
+    box-shadow: 0 0 2px #4E443C;
+}
+
+.jcarousel-pagination a.active {
+    background: #4E443C;
+    color: #fff;
+    opacity: 1;
+
+    -webkit-box-shadow: 0 0 2px #F0EFE7;
+    -moz-box-shadow: 0 0 2px #F0EFE7;
+    box-shadow: 0 0 2px #F0EFE7;
+}

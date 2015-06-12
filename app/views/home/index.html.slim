@@ -11,12 +11,6 @@ h2[style="color:#787878;font-family:times new roman, serif;text-align:center;mar
           br
           | #{article.article_title}
       end
-      / li
-      /   a[href="http://red-news.ru/apple-predstavila-novyu-mobilnyu-platformy-ios-9/"]
-      /     img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/b3df3c9392be513c12b9686b85893959.jpg" alt="b3df3c9392be513c12b9686b85893959"]
-      /     br
-      /     | Apple представила новую мобильную платформу iOS 9
-
   a.jcarousel-control-prev[href="#"]
   a.jcarousel-control-next[href="#"]
 .row
@@ -25,32 +19,12 @@ h2[style="color:#787878;font-family:times new roman, serif;text-align:center;mar
       | Самое обсуждаемое
     .post-block
       h2
-        a[href="http://red-news.ru/v-kolizee-vosstanovili-lift-dlia-dikih-zverei/"]
-          | В Колизее восстановили лифт для диких зверей
-      img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/7146368ef030cf5eb394a44549f9b1b6.jpg" alt="7146368ef030cf5eb394a44549f9b1b6"]
-      p
-        | Немецкие археологи восстановили деревянный лифт, по которому в римский Колизей поднимали львов. После открытия дверцы звери выбегали на арену и…
-    .post-block
-      h2
-        a[href="http://red-news.ru/amazon-zaimetsia-razrabotkoi-krypnogo-igrovogo-proekta/"]
-          | Amazon займется разработкой крупного игрового проекта
-      img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/0d32482b6e3364e95165510170acbbd1.jpg" alt="0d32482b6e3364e95165510170acbbd1"]
-      p
-        | Компания Amazon открыла набор сотрудников для работы над крупным игровым проектом, передает портал IGN. Новинку готовят для PC. Пока неизвестно,…
-    .post-block
-      h2
-        a[href="http://red-news.ru/apple-predstavit-obnovleniia-ios-i-os-x-na-konferencii-wwdc/"]
-          | Apple представит обновления iOS и OS X на конференции WWDC
-      img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/bebdc96c1464f03855513f246b88067a.jpg" alt="bebdc96c1464f03855513f246b88067a"]
-      p
-        | Компания Apple откроет в понедельник, 8 июня, последнюю в 2015 году крупную конференцию для разработчиков. Мероприятие Worldwide Developer Conference пройдет…
-    .post-block
-      h2
-        a[href="http://red-news.ru/rossiiskogo-boevogo-androida-naychat-begat-k-koncy-goda/"]
-          | Российского боевого андроида научат бегать к концу года
-      img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="http://red-news.ru/wp-content/uploads/2015/06/891167979dbe1c5224e432ae0fde75ca.jpg" alt="891167979dbe1c5224e432ae0fde75ca"]
-      p
-        | Владимир Путин во время посещения ЦНИИ точного машиностроения (ЦНИИТОЧМАШ) в Климовске Конструкторы обучат российского боевого андроида бегать и преодолевать препятствия…
+      - @top_speak_articles.each do | article |
+        a[href="#{ article.url_title }"]
+          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
+        br
+        | #{article.article_title}
+      end
     div[style="clear:both"]
   .col-md-9
     .row
@@ -58,53 +32,19 @@ h2[style="color:#787878;font-family:times new roman, serif;text-align:center;mar
         h4.block-title
           | Самое популярное
         .popular-block
-          a[href="http://red-news.ru/lenovo-anonsirovala-smartfon-s-predystanovlennoi-igroi-world-of-tanks/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/themes/red-news/img/nophoto.jpg" alt=""]
-            |  Lenovo анонсировала смартфон с предустановленной игрой World of Tanks
-        .popular-block
-          a[href="http://red-news.ru/videozapis-s-ypavshego-na-zemlu-obtekatelia-rakety-falcon-9-nashli-v-more/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/06/c526229f53248befbeae4df0d618b11b-100x70.jpg" alt="c526229f53248befbeae4df0d618b11b"]
-            |  Видеозапись с упавшего на Землю обтекателя ракеты Falcon 9 нашли в море
+          - @hot_articles.each do | article |
+            a[href="#{ article.url_title }"]
+              img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
+            br
+            | #{article.article_title}
+          end
       .col-md-9
         h4.block-title
           | Россия
         .popular-block
-          a[href="http://red-news.ru/peticiu-za-otstavky-astahova-podpisali-bolee-12-tysiach-chelovek/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/themes/red-news/img/nophoto.jpg" alt=""]
-            |  Петицию за отставку Астахова подписали более 12 тысяч человек
-        .popular-block
-          a[href="http://red-news.ru/syd-nakazal-mysylmanky-iz-pervoyralska-za-prizyv-ne-prazdnovat-novyi-god/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/faa02b82580fd268925d2084d30ee6a5-100x70.jpg" alt="faa02b82580fd268925d2084d30ee6a5"]
-            |  Суд наказал мусульманку из Первоуральска за призыв не праздновать Новый год
-        .popular-block
-          a[href="http://red-news.ru/syd-dal-voronejskomy-borcy-s-korrypciei-yslovnyi-srok-za-vziatky/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/accc22a767489d0e23e7ce3691713a6a-100x70.jpg" alt="accc22a767489d0e23e7ce3691713a6a"]
-            |  Суд дал воронежскому борцу с коррупцией условный срок за взятку
-        .popular-block
-          a[href="http://red-news.ru/pytin-prinial-otstavky-smolenskogo-gybernatora/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/87be9af6bb4c850c2867f0f1a4293903-100x70.jpg" alt="87be9af6bb4c850c2867f0f1a4293903"]
-            |  Путин принял отставку смоленского губернатора
-        .popular-block
-          a[href="http://red-news.ru/meriia-krasnoiarska-sobiraetsia-syditsia-s-investorom-krematoriia/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/2224674e434f3714d5616a187931bd12-100x70.jpg" alt="2224674e434f3714d5616a187931bd12"]
-            |  Мэрия Красноярска собирается судиться с инвестором крематория
-        .popular-block
-          a[href="http://red-news.ru/zakrytaia-posle-tverkinga-pchelok-shkola-tancev-v-orenbyrge-vozobnovila-raboty/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/9856256328cac510da01b3dcfb59443c-100x70.jpg" alt="9856256328cac510da01b3dcfb59443c"]
-            |  Закрытая после тверкинга «пчелок» школа танцев в Оренбурге возобновила работу
-        .popular-block
-          a[href="http://red-news.ru/vedyshaia-svadebnoi-ceremonii-obiasnila-pechal-chechenskoi-nevesty/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/7f5de234984568ead27bb86d65c97a1d-100x70.jpg" alt="7f5de234984568ead27bb86d65c97a1d"]
-            |  Ведущая свадебной церемонии объяснила печаль чеченской невесты
-        .popular-block
-          a[href="http://red-news.ru/v-kremle-pohvalili-rossiiskih-hokkeistov/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/0b648d5056338b1c9eecba0280f8dae6-100x70.jpg" alt="0b648d5056338b1c9eecba0280f8dae6"]
-            |  В Кремле похвалили российских хоккеистов
-        .popular-block
-          a[href="http://red-news.ru/peskov-prokommentiroval-priezd-nyland/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/17e795eb6feb9e04a996887c10f9ada8-100x70.jpg" alt="17e795eb6feb9e04a996887c10f9ada8"]
-            |  Песков прокомментировал приезд Нуланд
-        .popular-block
-          a[href="http://red-news.ru/v-kremle-otkazalis-kommentirovat-svadby-17-letnei-chechenki/"]
-            img.attachment-small-thumb.wp-post-image[width="100" height="70" src="http://red-news.ru/wp-content/uploads/2015/05/4e95246fbe90f1a632ad648b1c3bf333-100x70.jpg" alt="4e95246fbe90f1a632ad648b1c3bf333"]
-            |  В Кремле отказались комментировать свадьбу 17-летней чеченки
+            - @russian_articles.each do | article |
+              a[href="#{ article.url_title }"]
+                img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
+              br
+              | #{article.article_title}
+            end
