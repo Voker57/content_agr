@@ -6,45 +6,9 @@ h2[style="color:#787878;font-family:times new roman, serif;text-align:center;mar
       li
       - @hot_articles.each do | article |
         li
-          a = link_to controller: 'articles', action: 'show', id:  article(params[:id]) #article.url_title
-            img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
-          br
-          | #{article.article_title}
+          = link_to article_path( article.url_title ) do
+           img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"] 
+           = article.article_title
       end
   a.jcarousel-control-prev[href="#"]
   a.jcarousel-control-next[href="#"]
-.row
-  .col-md-9
-    h4.block-title
-      | Самое обсуждаемое
-    .post-block
-      h2
-      - @top_speak_articles.each do | article |
-        a[href="#{ article.url_title }"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
-        br
-        | #{article.article_title}
-      end
-    div[style="clear:both"]
-  .col-md-9
-    .row
-      .col-md-9
-        h4.block-title
-          | Самое популярное
-        .popular-block
-          - @hot_articles.each do | article |
-            a[href="#{ article.url_title }"]
-              img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
-            br
-            | #{article.article_title}
-          end
-      .col-md-9
-        h4.block-title
-          | Россия
-        .popular-block
-            - @russian_articles.each do | article |
-              a[href="#{ article.url_title }"]
-                img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
-              br
-              | #{article.article_title}
-            end

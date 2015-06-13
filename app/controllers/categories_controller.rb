@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def show
-    @top_read_articles = Category.most_visited.articles.limit( 2 )
+    @most_readest_articles = Category.most_readest.articles.limit( 2 )
     @category = Category.where( category_params ).first
     @articles = @category.articles
   end

@@ -1,12 +1,11 @@
 .col-md-12
-  h1 style="(color:#787878;font-family:times new roman), serif;margin:0 0 10px 0;"= @category.title
+  h1 style="(color:#787878;font-family:times new roman), serif;margin:0 0 10px 0;"= @category.page_title
   .popular-block.cat
     h2
     - @articles.each do | article |
-      a href="#{ article.url_title }"
-        img.attachment-small-thumb.wp-post-image height="70" src="#{ article.preview_url }" width="100" /
-        p #{ article.article_title }
-    end
+      = link_to article_path( article.url_title ) do
+        img.attachment-small-thumb.wp-post-image height="70" src="#{ article.preview_url }" width="100"
+        = article.article_title
   .wp-pagenavi
     span.pages Страница 1 из 10
     span.current 1
