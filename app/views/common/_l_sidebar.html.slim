@@ -1,70 +1,67 @@
-h4
-  | Самое читаемое
-  h2
-  .post-block
-      h2
-      - @most_readest_articles.each do | article |
-        a[href="#{ article.url_title }"]
-          img.attachment-post-thumbnail.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
-        br
-        | #{article.article_title}
-      end
-  .popular-block
-  ul.sidebar
-    li#calendar-2.widget.widget_calendar
-      h2.widgettitle Календарь
-      #calendar_wrap
-        table#wp-calendar
-          caption Июнь 2015
-          thead
-            tr
-              th scope="col" title="Понедельник"  Пн
-              th scope="col" title="Вторник"      Вт
-              th scope="col" title="Среда"        Ср
-              th scope="col" title="Четверг"      Чт
-              th scope="col" title="Пятница"      Пт
-              th scope="col" title="Суббота"      Сб
-              th scope="col" title="Воскресенье"  Вс
-          tfoot
-            tr
-              td#prev colspan="3"
-              td.pad &nbsp;
-              td#next.pad colspan="3"  &nbsp;
-          tbody
-            tr
-              td 1
-              td 2
-              td 3
-              td 4
-              td 5
-              td 6
-              td 7
-            tr
-              td 8
-              td 9
-              td 10
-              td 11
-              td 12
-              td 13
-              td 14
-            tr
-              td 15
-              td 16
-              td 17
-              td 18
-              td 19
-              td 20
-              td 21
-            tr
-              td 22
-              td 23
-              td 24
-              td 25
-              td 26
-              td 27
-              td 28
-            tr
-              td 29
-              td 30
-              td 31
-              td.pad colspan="5"  &nbsp;
+| Самое читаемое
+.popular-block
+  - @most_readest_articles.each do | article |
+    a href="#{ article.url_title }"
+      img.attachment-small-thumb.wp-post-image[width="420" height="280" src="#{ article.preview_url }"]
+      br
+      | #{article.article_title}
+  end
+.popular-block
+ul.sidebar
+  li#calendar-2.widget.widget_calendar
+    h2.widgettitle Календарь
+    #calendar_wrap
+      table#wp-calendar
+        caption Июнь 2015
+        thead
+          tr
+            th scope="col" title="Понедельник"  Пн
+            th scope="col" title="Вторник"      Вт
+            th scope="col" title="Среда"        Ср
+            th scope="col" title="Четверг"      Чт
+            th scope="col" title="Пятница"      Пт
+            th scope="col" title="Суббота"      Сб
+            th scope="col" title="Воскресенье"  Вс
+        tfoot
+          tr
+            td#prev colspan="3"
+            td.pad &nbsp;
+            td#next.pad colspan="3"  &nbsp;
+        tbody
+          tr
+            td 1
+            td 2
+            td 3
+            td 4
+            td 5
+            td 6
+            td 7
+          tr
+            td 8
+            td 9
+            td 10
+            td 11
+            td 12
+            td 13
+            td 14
+          tr
+            td 15
+            td 16
+            td 17
+            td 18
+            td 19
+            td 20
+            td 21
+          tr
+            td 22
+            td 23
+            td 24
+            td 25
+            td 26
+            td 27
+            td 28
+          tr
+            td 29
+            td 30
+            td 31
+            td.pad colspan="5"  &nbsp;
