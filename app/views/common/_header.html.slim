@@ -3,8 +3,7 @@
     .col-xs-18
       a[href='/']
         =image_tag( 'logo.jpg' )
-      .time
-        | #{ Time.now.to_formatted_s(:long_ordinal) }
+      .time= @current
       div[style="float:right;margin:25px 0 0 0;"]
         script[type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"]
         .yashare-auto-init[data-yasharel10n="ru" data-yasharetype="link" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,moimir"]
@@ -14,33 +13,12 @@
       .red
         .black
           ul#menu-verxnee-menyu
-            li#menu-item-62.menu-item.menu-item-type-custom.menu-item-object-custom.current-menu-item.current_page_item.menu-item-home.menu-item-62
-              a[href='/']
-                | Главная
-            li#menu-item-254.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-254
-              a[href='#']
-                | Новости
-            li#menu-item-63.menu-item.menu-item-type-taxonomy.menu-item-object-category.menu-item-63
-              a[href='/category/world']
-                | В мире
-            li#menu-item-153.menu-item.menu-item-type-taxonomy.menu-item-object-category.menu-item-153
-              a[href='/category/russian']
-                | Россия
-            li#menu-item-64.menu-item.menu-item-type-taxonomy.menu-item-object-category.menu-item-64
-              a[href='/category/social']
-                | Общество
-            li#menu-item-614.menu-item.menu-item-type-taxonomy.menu-item-object-category.menu-item-614
-              a[href='/category/political']
-                | Политика
-            li#menu-item-65.menu-item.menu-item-type-taxonomy.menu-item-object-category.menu-item-65
-              a[href='/category/business']
-                | Бизнес
-            li#menu-item-14129.menu-item.menu-item-type-taxonomy.menu-item-object-category.menu-item-14129
-              a[href='/category/science']
-                | Наука и техника
-            li#menu-item-66.menu-item.menu-item-type-taxonomy.menu-item-object-category.menu-item-66
-              a[href='/category/sport']
-                | Спорт
+            - @header_categories.each do | category |
+              li id="menu-item-#{ category.id }" class="menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-home.menu-item-#{ category.id }" 
+                = link_to category.page_title, category_path( title: category.title )
+                javascript:
+                  current_category= "#{ @category.id }"
+
           form.search[action="/" method="get"]
             input.stext[type="text" placeholder="Поиск по сайту" name="s"]
             input.sbutton[type="submit" value="Найти"]

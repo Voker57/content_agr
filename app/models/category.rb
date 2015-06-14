@@ -9,4 +9,8 @@ class Category < ActiveRecord::Base
   scope :russia,         -> { where( title: 'russia' ) }
   scope :main,           -> { where( title: 'main' ) }
 
+  def self.header
+    where( title: %w( main news world russia social political business science sport ) )
+  end
+
 end

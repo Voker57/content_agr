@@ -1,14 +1,11 @@
 doctype html
 html
   head
-    = render 'common/head_tag'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     body
-    .container-fluid
-      .container-fluid.menu
-      = render 'common/header'
+     = render 'common/header'
     .container-fluid.content
       .row
         .col-md-3.sidebar

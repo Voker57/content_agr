@@ -36,17 +36,17 @@
                            preview_url:   'http://red-news.ru/wp-content/uploads/2015/06/5631e39776155b91fe1bf4111af73fd9.jpg' )
 
 categories = { main:           'Главная',
-               most_visited:   'Самые популярные',
-               most_readest:   'Самые читаемые',
-               most_discussed: 'Самые обсуждаемые',
-               russia:         'Россия',
                news:           'Новости',
                world:          'В мире',
+               russia:         'Россия',
                social:         'Общество',
                political:      'Политика',
                business:       'Бизнес',
                science:        'Наука и Техника',
-               sport:          'Спорт' }
+               sport:          'Спорт',
+               most_visited:   'Самые популярные',
+               most_readest:   'Самые читаемые',
+               most_discussed: 'Самые обсуждаемые' }
 categories.each do | title, page_title |
   Category.create( title: title, page_title: page_title )
 end
