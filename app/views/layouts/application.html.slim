@@ -12,7 +12,14 @@ html
     .container-fluid.content
       .row
         .col-md-3.sidebar = render 'common/l_sidebar'
-        .col-md-12 = yield
+        .col-md-12
+          = yield
+          .row
+            = render 'common/most_discussed'
+            .col-md-9
+              .row
+                .col-md-9 = render 'common/most_popular'
+                .col-md-9 = render 'common/russia'
         .col-md-3.sidebar = render 'common/r_sidebar'
     .container-fluid.footer
       .row
