@@ -1,25 +1,25 @@
 doctype html
-html
+html lang='en'
   head
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    body
-     = render 'common/header'
-    .container-fluid.content
-      .row
-        .col-md-3.sidebar
-          .h4 = render 'common/l_sidebar'
-        .col-md-12
-          = yield
-          .row
-            = render 'common/most_discussed'
-            .col-md-9
-              .row
-                .col-md-9 = render 'common/most_popular'
-                .col-md-9 = render 'common/russia'
-        .col-md-3.sidebar = render 'common/r_sidebar'
-    .container-fluid.footer
-      .row
-        .col-xs-18 = render 'common/footer'
-        = render 'common/orphus'
+  body
+  = render 'common/header'
+  .container-fluid.content
+    .row
+      .col-md-3.sidebar
+        = render 'common/l_sidebar'
+      .col-md-12
+        = yield
+        .row
+          = render 'common/most_discussed'
+          .col-md-9
+            .row
+              .col-md-9 = render 'common/most_popular'
+              .col-md-9 = render 'common/russia'
+      .col-md-3.sidebar = render 'common/r_sidebar'
+  .container-fluid.footer
+    .row
+      .col-xs-18 = render 'common/footer'
+  = render 'common/orphus'

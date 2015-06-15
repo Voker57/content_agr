@@ -2,10 +2,10 @@
 Theme Name: Red News
 Author: Sergey Fesenko
 */
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
-* {
-  font-size:13px;
-  font-family: 'Droid Sans', sans-serif;
+@import url( http://fonts.googleapis.com/css?family=Droid+Sans:400,700 );
+*  {
+    font-size:13px;
+    font-family: 'Droid Sans', sans-serif;
 }
 a {
   color:#d01f1c;

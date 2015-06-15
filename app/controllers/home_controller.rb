@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @header_categories = Category.header
-    @current = Russian::strftime( Time.now, "%A, %m.%d.%y, %R" )
+    @current = Russian::strftime( Time.now, "%A, %d.%m.%y, %R" )
 
     @category = Category.main.first
     @hot_articles = Category.most_visited.first.articles

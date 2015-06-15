@@ -14,14 +14,24 @@
         .black
           ul#menu-verxnee-menyu
             - @header_categories.each do | category |
-              li id="menu-item-#{ category.id }" class="menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-home.menu-item-#{ category.id }" 
+              li id="menu-item-#{ category.id }" class="menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-home.menu-item-#{ category.id }"
                 = link_to category.page_title, category_path( title: category.title )
                 javascript:
                   current_category= "#{ @category.id }"
-
-          form.search[action="/" method="get"]
-            input.stext[type="text" placeholder="Поиск по сайту" name="s"]
-            input.sbutton[type="submit" value="Найти"]
+          select.responsive-menu
+            option value="#" Меню...
+            option selected="selected" value="http://red-news.ru/" &nbsp;Главная
+            option value="http://red-news.ru/novosti/" &nbsp;Новости
+            option value="http://red-news.ru/category/v-mire/"  &nbsp;В мире
+            option value="http://red-news.ru/category/rossiya/"  &nbsp;Россия
+            option value="http://red-news.ru/category/obshhestvo/"  &nbsp;Общество
+            option value="http://red-news.ru/category/politika/"  &nbsp;Политика
+            option value="http://red-news.ru/category/biznes/"  &nbsp;Бизнес
+            option value="http://red-news.ru/category/nauka-i-texnika/"  &nbsp;Наука и техника
+            option value="http://red-news.ru/category/sport/"  &nbsp;Спорт
+          form.search action="/" method="get"
+            input.stext name="s" placeholder=("Поиск по сайту") type="text" /
+            input.sbutton type="submit" value="Найти" /
         .breadcrumbs[xmlns:v="http://rdf.data-vocabulary.org/#"]
           span[typeof="v:Breadcrumb"]
             span[property="v:title"]
