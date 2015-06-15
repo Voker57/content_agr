@@ -31,7 +31,7 @@ head
       link#wp-pagenavi-css href="http://red-news.ru/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70" media="all" rel="stylesheet" type="text/css" /
       link#wordpress-popular-posts-css href="http://red-news.ru/wp-content/plugins/wordpress-popular-posts/style/wpp.css?ver=3.2.1" media="all" rel="stylesheet" type="text/css" /
       javascript:
-        | var ayvpp_root = "http://red-news.ru";
+          var ayvpp_root = "/";
       script src="http://red-news.ru/wp-includes/js/jquery/jquery.js?ver=1.11.1" type="text/javascript"
       script src="http://red-news.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1" type="text/javascript"
       link href="http://red-news.ru/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml" /
@@ -48,64 +48,17 @@ head
           | border: 1px solid #c8c8c8;
         | }
       javascript:
-        | var ayvpp_root = "http://red-news.ru";
+          var ayvpp_root = "/";
       script src="http://red-news.ru/wp-content/themes/red-news/js/jquery.jcarousel.min.js"
       script src="http://red-news.ru/wp-content/themes/red-news/js/jcarousel.responsive.js"
       script src="http://red-news.ru/wp-content/themes/red-news/js/jquery.mobilemenu.js"
       script src="http://red-news.ru/wp-content/themes/red-news/js/bootstrap.min.js"
       javascript:
-        | jQuery(document).ready(function () {
-          | jQuery('#wp-calendar a').attr('title', '');
-          | jQuery('.menu ul').mobileMenu({
-            | defaultText: 'Меню...',
-            | className: 'responsive-menu',
-            | subMenuDash: '-'
-          | });
-        | });
-      script src="http://red-news.ru/wp-content/themes/red-news/js/orphus.js" type="text/javascript"
-    link href="http://red-news.ru/wp-content/themes/red-news/style.css" rel="stylesheet" /
-    /! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-    /![if lt IE 9]
-      | <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script
-      | <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script
-    /! All in One SEO Pack 2.2.6.1 by Michael Torbert of Semper Fi Web Design[277,284]
-    link href="http://red-news.ru/" rel="canonical" /
-    /! /all in one seo pack
-    link href="http://red-news.ru/glavnaya/feed/" rel="alternate" title=("Red News &raquo; Лента комментариев к &laquo;Главная&raquo;") type="application/rss+xml" /
-    link#ayvpp-admin-css href="http://red-news.ru/wp-content/plugins/automatic-youtube-video-posts/css/style.css?ver=4.1.5" media="all" rel="stylesheet" type="text/css" /
-    link#wp-polls-css href="http://red-news.ru/wp-content/plugins/wp-polls/polls-css.css?ver=2.68" media="all" rel="stylesheet" type="text/css" /
-    link#wp-pagenavi-css href="http://red-news.ru/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70" media="all" rel="stylesheet" type="text/css" /
-    link#wordpress-popular-posts-css href="http://red-news.ru/wp-content/plugins/wordpress-popular-posts/style/wpp.css?ver=3.2.1" media="all" rel="stylesheet" type="text/css" /
-    javascript:
-      | var ayvpp_root = "http://red-news.ru";
-    script src="http://red-news.ru/wp-includes/js/jquery/jquery.js?ver=1.11.1" type="text/javascript"
-    script src="http://red-news.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1" type="text/javascript"
-    link href="http://red-news.ru/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml" /
-    link href="http://red-news.ru/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml" /
-    meta content=("WordPress 4.1.5") name="generator" /
-    link href="http://red-news.ru/" rel="shortlink" /
-    css:
-      .wp-polls .pollbar {
-        | margin: 1px;
-        | font-size: 6px;
-        | line-height: 8px;
-        | height: 8px;
-        | background-image: url('http://red-news.ru/wp-content/plugins/wp-polls/images/default/pollbg.gif');
-        | border: 1px solid #c8c8c8;
-      | }
-    javascript:
-      | var ayvpp_root = "http://red-news.ru";
-    script src="http://red-news.ru/wp-content/themes/red-news/js/jquery.jcarousel.min.js"
-    script src="http://red-news.ru/wp-content/themes/red-news/js/jcarousel.responsive.js"
-    script src="http://red-news.ru/wp-content/themes/red-news/js/jquery.mobilemenu.js"
-    script src="http://red-news.ru/wp-content/themes/red-news/js/bootstrap.min.js"
-    javascript:
-      | jQuery(document).ready(function () {
-        | jQuery('#wp-calendar a').attr('title', '');
-        | jQuery('.menu ul').mobileMenu({
-          | defaultText: 'Меню...',
-          | className: 'responsive-menu',
-          | subMenuDash: '-'
-        | });
-      | });
-    script src="http://red-news.ru/wp-content/themes/red-news/js/orphus.js" type="text/javascript"
+        jQuery(document).ready(function () {
+          jQuery('#wp-calendar a').attr('title', '');
+          jQuery('.menu ul').mobileMenu({
+            defaultText: 'Меню...',
+            className: 'responsive-menu',
+            subMenuDash: '-'
+          });
+        });
