@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//=require jquery
+//=require articles.js
+//=require bootstrap
+//=require bootstrap.min
+//=require jcarousel.responsive
+//=require jquery-migrate.min
+//=require jquery.jcarousel.min
+//=require jquery.mobilemenu
+//=require npm
+//=require orphus
+//=require vanilla
+//=require jquery_ujs
+//=require turbolinks
+//=require_tree .
