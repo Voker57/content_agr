@@ -17,7 +17,7 @@
               li id="menu-item-#{ category.id }" class="menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-home.menu-item-#{ category.id }"
                 = link_to category.page_title, category_path( title: category.title )
                 javascript:
-                  current_category= "#{ @category.id }"
+                  jQuery("#menu-item-#{ @category.id }").toggleClass('current-menu-item')
           select.responsive-menu
             option value="#"  Меню...
             option selected="selected" value="http://red-news.ru/"  &nbsp;Главная
