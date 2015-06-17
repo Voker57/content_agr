@@ -1,9 +1,9 @@
 .col-md-12.post-single
-  h2 style="(color:#787878;font-family:times new roman), serif;margin:0 0 10px 0;" #{article.title}
+  h2 style="(color:#787878;font-family:times new roman), serif;margin:0 0 10px 0;#{@article.article_title}"
   p
-    img src="/wp-content/uploads/2015/06/14220380948e3b7cf42b0324ae263c36.jpg" /
+    img src="#{ @article.preview_url }" /
   p
-    | #{article.body}
+    | #{ @article.article_body }
   script charset="utf-8" src="//yastatic.net/share/share.js" type="text/javascript"
   .yashare-auto-init data-yasharel10n="ru" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,moimir" data-yasharetype="link"
   br/

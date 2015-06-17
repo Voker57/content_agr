@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :articles, only: [ :show ], param: :title
-  resources :categories, only: [ :show ], param: :title
+  get '/:title',to: 'categories#show', as: 'category'
+  get '/:category_title/:article_title',to: 'articles#show', as: 'article'
 
   root 'home#index'
 
