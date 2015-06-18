@@ -3,7 +3,7 @@
   .popular-block.cat
     h2
     - @articles.each do | article |
-      = link_to article_path( category_title: @category.title, article_title: article.url_title ) do
+      = link_to article_path( category_title: @category.title, article_title: article.page_title ) do
         img.attachment-small-thumb.wp-post-image height="70" src="#{ article.preview_url }" width="100"
         = article.article_title
   .wp-pagenavi
