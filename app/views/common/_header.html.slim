@@ -27,8 +27,8 @@
                   subMenuDash: '-'
               });
             });
-          form.search action="/" method="get"
-            input.stext name="s" placeholder=("Поиск по сайту") type="text" /
+          form.search action="#{ @category.title }" method="get"
+            input.stext name="s" placeholder="Поиск по сайту" type="text" /
             input.sbutton type="submit" value="Найти" /
         .breadcrumbs[xmlns:v="http://rdf.data-vocabulary.org/#"]
           span[typeof="v:Breadcrumb"]
