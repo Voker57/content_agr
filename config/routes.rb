@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #resources :admin, only: [:new, :create, :destroy]
+  #match 'singin',  to: 'admin#new',     via: 'get'
+  #match 'singout', to: 'admin#destroy', via: 'delete'
 
   get '/:title',to: 'categories#show', as: 'category'
   get '/:category_title/:article_title',to: 'articles#show', as: 'article'
