@@ -8,12 +8,8 @@ class Article < ActiveRecord::Base
 
   has_many :category_articles
   has_many :categories, through: :category_articles
-  
- SOURCES = ['https://vk.com/public15722194', 'https://vk.com/moskvabezformata', 'https://vk.com/mk_ru', 'https://vk.com/groups', 'https://vk.com/interfaxru',
-              'https://vk.com/tassagency', 'https://vk.com/bravica_inc', 'https://vk.com/groups', 'https://vk.com/vechermoskwa', 'https://vk.com/rosbalt_ru', 
-              'https://vk.com/nowosti_mail_ru', 'https://vk.com/newsmskcom', 'https://vk.com/rgru']
- # SOURCES = 'https://vk.com/interfaxru'
-  
+
+
   def self.reload_news
     page = pull_links
   end
@@ -38,7 +34,7 @@ class Article < ActiveRecord::Base
 =begin
   #YANDEX_RSS = ['https://news.yandex.ru/world.rss', 'https://news.yandex.ru/index.rss', 'https://news.yandex.ru/politics.rss']
   YANDEX_RSS = 'https://news.yandex.ru/index.rss'
-  
+
   def self.reload_news
     links = pull_links
   end

@@ -1,5 +1,19 @@
+vk_groups = [ kp(           name_group: 'Комсомольская правда',   link_group: 'https://vk.com/public15722194' ),
+              bezformata(   name_group: 'Без формата',            link_group: 'https://vk.com/moskvabezformata' ),
+              mk(           name_group: 'Московский комсомолец',  link_group: 'https://vk.com/mk_ru' ),
+              fax(          name_group: 'Интер факс',             link_group: 'https://vk.com/interfaxru' ),
+              tacc(         name_group: 'ТАСС',                   link_group: 'https://vk.com/tassagency' ),
+              bravika(      name_group: 'Бравика',                link_group: 'https://vk.com/bravica_inc' ),
+              vechermoskwa( name_group: 'Вечерняя Москва',        link_group: 'https://vk.com/vechermoskwa' ),
+              rosbalt_ru(   name_group: 'РОСБАЛТ',                link_group: 'https://vk.com/rosbalt_ru' ),
+              mail_ru(      name_group: 'Mail Ru',                link_group: 'https://vk.com/nowosti_mail_ru' ),
+              newsmskcom(   name_group: 'В Москве',               link_group: 'https://vk.com/newsmskcom'),
+              rg(           name_group: 'Росийская газета',       link_group: 'https://vk.com/rgru') ]
 
 
+vk_groups.each do | vk_group |
+  VkGroup.create ( name_group: vk_group( :name_group ), link_group: vk_group( :link_group ) )
+end
 
 
 
