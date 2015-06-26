@@ -1,20 +1,17 @@
-vk_groups = [ kp(           name_group: 'Комсомольская правда',   link_group: 'https://vk.com/public15722194' ),
-              bezformata(   name_group: 'Без формата',            link_group: 'https://vk.com/moskvabezformata' ),
-              mk(           name_group: 'Московский комсомолец',  link_group: 'https://vk.com/mk_ru' ),
-              fax(          name_group: 'Интер факс',             link_group: 'https://vk.com/interfaxru' ),
-              tacc(         name_group: 'ТАСС',                   link_group: 'https://vk.com/tassagency' ),
-              bravika(      name_group: 'Бравика',                link_group: 'https://vk.com/bravica_inc' ),
-              vechermoskwa( name_group: 'Вечерняя Москва',        link_group: 'https://vk.com/vechermoskwa' ),
-              rosbalt_ru(   name_group: 'РОСБАЛТ',                link_group: 'https://vk.com/rosbalt_ru' ),
-              mail_ru(      name_group: 'Mail Ru',                link_group: 'https://vk.com/nowosti_mail_ru' ),
-              newsmskcom(   name_group: 'В Москве',               link_group: 'https://vk.com/newsmskcom'),
-              rg(           name_group: 'Росийская газета',       link_group: 'https://vk.com/rgru') ]
+vk_groups = [ { name: 'Комсомольская правда',  link: 'http://vk.com/public15722194' },
+              { name: 'Без формата',           link: 'http://vk.com/moskvabezformata' },
+              { name: 'Московский комсомолец', link: 'http://vk.com/mk_ru' },
+              { name: 'Интер факс',            link: 'http://vk.com/interfaxru' },
+              { name: 'ТАСС',                  link: 'http://vk.com/tassagency' },
+              { name: 'Бравика',               link: 'http://vk.com/bravica_inc' },
+              { name: 'Вечерняя Москва',       link: 'http://vk.com/vechermoskwa' },
+              { name: 'РОСБАЛТ',               link: 'http://vk.com/rosbalt_ru' },
+              { name: 'Mail Ru',               link: 'http://vk.com/nowosti_mail_ru' },
+              { name: 'В Москве',              link: 'http://vk.com/newsmskcom'},
+              { name: 'Российская газета',     link: 'http://vk.com/rgru'} ]
 
 
-vk_groups.each do | vk_group |
-  VkGroup.create ( name_group: vk_group( :name_group ), link_group: vk_group( :link_group ) )
-end
-
+vk_groups.each { | vk_group | VkGroup.create name_group: vk_group[:name], link_group: vk_group[:link] }
 
 
 
@@ -85,7 +82,7 @@ end
 #               most_visited:   'Самые популярные',
 #               most_readest:   'Самые читаемые',
 #               most_discussed: 'Самые обсуждаемые' }
-#categories.each do | title, page_title |
-#  Category.create( title: title, page_title: page_title )
+#categories.each do | en_name, ru_name |
+#  Category.create( title: en_name, page_title: ru_name )
 #end
 #Category.all.map { |c| c.articles << Article.all  }

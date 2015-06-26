@@ -1,7 +1,5 @@
 class Article < ActiveRecord::Base
   require 'mechanize'
-  require 'date'
-  require 'json'
   require 'open-uri'
   require 'rss'
   require 'rest-client'
@@ -9,44 +7,19 @@ class Article < ActiveRecord::Base
   has_many :category_articles
   has_many :categories, through: :category_articles
 
-
-  def self.reload_news
-    page = pull_links
+  def self.get_links
+    links = VkGroup.with_links.pluck( :link_group )
+    review = reload_news( links )
   end
 
-  def self.pull_links
-    SOURCES.each do | sources |
-      agent = Mechanize.new
-      page = agent.get( sources )
-      #review_links = review_links[1...6]
+  def self.reload_news( links )
+    review = []
+    agent = Mechanize.new
+    links.each do | link |
+      page = agent.get( link )
+      review << page.links_with( href: %r{^/away.php?\w+} )
+      #review_link = review_link[2...6] #первый два линка не берем, потому что там ссылки не на статьи, а на сайты новостей
     end
   end
 
-
-
-
-
-
-
-
-
-
-=begin
-  #YANDEX_RSS = ['https://news.yandex.ru/world.rss', 'https://news.yandex.ru/index.rss', 'https://news.yandex.ru/politics.rss']
-  YANDEX_RSS = 'https://news.yandex.ru/index.rss'
-
-  def self.reload_news
-    links = pull_links
-  end
-
-  def self.pull_links
-   # YANDEX_RSS.each do | yandex_rss |
-      open( YANDEX_RSS ) do | rss |
-        feed = RSS::Parser.parse( rss )
-        links = feed.items.map { | item | item.link }
-        sources = links.map { | link | CGI.parse( link ) }
-        links = sources.map { | elem | elem.values }.join(' ').split()
-      end
-    #end
-=end
 end
