@@ -11,7 +11,7 @@ vk_groups = [ { name: 'Комсомольская правда',  link: 'http://
               { name: 'Российская газета',     link: 'http://vk.com/rgru'} ]
 
 
-vk_groups.each { | vk_group | VkGroup.create name_group: vk_group[:name], link_group: vk_group[:link] }
+vk_groups.each { | vk_group | VkGroup.create name: vk_group[:name], link: vk_group[:link] }
 
 
 

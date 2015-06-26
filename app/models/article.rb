@@ -8,18 +8,20 @@ class Article < ActiveRecord::Base
   has_many :categories, through: :category_articles
 
   def self.get_links
-    links = VkGroup.with_links.pluck( :link_group )
+    links = VkGroup.with_links.pluck( :link )
     review = reload_news( links )
   end
 
   def self.reload_news( links )
-    review = []
+    review_link = []
     agent = Mechanize.new
     links.each do | link |
       page = agent.get( link )
-      review << page.links_with( href: %r{^/away.php?\w+} )
-      #review_link = review_link[2...6] #первый два линка не берем, потому что там ссылки не на статьи, а на сайты новостей
+      review_link << page.links_with( href: %r{^/away.php?} )
     end
+    Rails.logger.info('=========================================================')
+    Rails.logger.info( review_link )
+    Rails.logger.info('=========================================================')
   end
 
 end

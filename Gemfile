@@ -18,7 +18,10 @@ gem 'cloudinary'
 gem 'nokogiri'
 gem 'mechanize', '2.7.2'
 # bugger
-gem 'byebug'
+group :development do
+  gem 'byebug'
+  #gem 'pry-rails'
+end
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

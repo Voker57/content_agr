@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20150625082810) do
   end
 
   create_table "vk_groups", force: true do |t|
-    t.string   "name_group"
-    t.string   "link_group"
+    t.string   "name"
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
