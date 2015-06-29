@@ -7,11 +7,15 @@ class Article < ActiveRecord::Base
   has_many :category_articles
   has_many :categories, through: :category_articles
 
-  MY = ['!!!should be email!!!', '!!!should be password!!!']
+  MY = ['jump2kill@list.ru', 'Jump2kill_']
+
+  def self.agent_session
+    agent = Mechanize.new
+  end
 
   def self.vk_login
     login_url = 'https://vk.com/'
-    agent = Mechanize.new
+    agent = agent_session
     page = agent.get( login_url )
     login_form = page.form_with( method: 'POST' )
     login_form.email = MY[0]
@@ -26,7 +30,7 @@ class Article < ActiveRecord::Base
 
   def self.reload_news( links )
     review_link = []
-    agent = Mechanize.new
+    agent = agent_session
     links.each do | link |
       page = agent.get( link )
       review_link << page.links_with( href: %r{^/away.php?} )
