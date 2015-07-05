@@ -1,10 +1,24 @@
-.col-md-12.post-single
-  h2 style="(color:#787878;font-family:times new roman), serif;margin:0 0 10px 0;#{@article.article_title}"
-  p
-    img src="#{ @article.preview_url }" /
-  p
-    | #{ @article.article_body }
-  script charset="utf-8" src="//yastatic.net/share/share.js" type="text/javascript"
-  .yashare-auto-init data-yasharel10n="ru" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,moimir" data-yasharetype="link"
-  br/
-  #disqus_thread
+p#notice = notice
+
+p
+  strong Url Title:
+  = @article.url_title
+p
+  strong Page Title:
+  = @article.page_title
+p
+  strong Source Url:
+  = @article.source_url
+p
+  strong Preview Url:
+  = @article.preview_url
+p
+  strong Article Title:
+  = @article.article_title
+p
+  strong Article Body
+  = @article.article_body
+
+= link_to 'Edit', edit_admin_article_path( @article )
+'|
+= link_to 'Back', admin_articles_path

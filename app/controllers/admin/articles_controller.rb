@@ -1,19 +1,10 @@
 class Admin::ArticlesController < ApplicationController
-   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :get_header, only: [:new, :show, :index]
+  
   def index
     @articles = Article.all
-    
-    @header_categories = Category.header
-    @current = Russian::strftime( Time.now, "%A, %d.%m.%y, %R" )
-    
-    @category = Category.main.first
-    @hot_articles = Category.most_visited.first.articles
-    @most_discussed_articles = Category.most_discussed.first.articles
-    @russian_articles = Category.russia.first.articles
-    @most_readest_articles = Category.most_readest.first.articles.limit( 2 )
-    @articles = @category.articles
-
   end
 
   def show
@@ -31,7 +22,7 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article source was successfully created.' }
+        format.html { redirect_to admin_article_path( @article ) }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -60,9 +51,21 @@ class Admin::ArticlesController < ApplicationController
     end
   end
 
+  def get_header
+    @header_categories = Category.header
+    @current = Russian::strftime( Time.now, "%A, %d.%m.%y, %R" )
+    
+    @category = Category.main.first
+    @hot_articles = Category.most_visited.first.articles
+    @most_discussed_articles = Category.most_discussed.first.articles
+    @russian_articles = Category.russia.first.articles
+    @most_readest_articles = Category.most_readest.first.articles.limit( 2 )
+    @articles = @category.articles
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_article_source
+    def set_article
       @article = Article.find( params[:id] )
     end
 

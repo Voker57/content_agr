@@ -1,4 +1,4 @@
-= form_for @article do |f|
+= form_for @article, url: admin_articles_path do |f|
   - if @article.errors.any?
     #error_explanation
       h2 = "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
@@ -7,20 +7,22 @@
           li = message
 
   .field
-    = f.label :url_title
+    = f.label :url
     = f.text_field :url_title
   .field
     = f.label :page_title
     = f.text_field :page_title
   .field
+    = f.label :source_url
+    = f.text_field :source_url
+  .field
+    = f.label :preview_url
+    = f.text_field  :preview_url
+  .field
     = f.label :article_title
     = f.text_field :article_title
   .field
     = f.label :article_body
-    = f.text_field :article_body
-  .field
-    = f.label :source_url
-    = f.text :source_url
-  .field
-    = f.label :preview_url
-    = f.text  :preview_url
+    = f.text_area :article_body
+  
+  .actions = f.submit

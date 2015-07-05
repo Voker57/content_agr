@@ -12,10 +12,7 @@ p
 p
   strong Xpath:
   = @article_source.xpath
-p
-  strong Belongs to:
-  = @article_source.belongs_to
 
-= link_to 'Edit', edit_article_source_path(@article_source)
+= link_to 'Edit', edit_admin_article_source_path(@article_source)
 '|
-= link_to 'Back', article_sources_path
+= link_to 'Back', admin_article_sources_path
