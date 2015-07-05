@@ -1,0 +1,10 @@
+.col-md-12.post-single
+  h2 style="(color:#787878;font-family:times new roman), serif;margin:0 0 10px 0;#{@article.article_title}"
+  p
+    img src="#{ @article.preview_url }" /
+  p
+    | #{ @article.article_body }
+  script charset="utf-8" src="//yastatic.net/share/share.js" type="text/javascript"
+  .yashare-auto-init data-yasharel10n="ru" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,moimir" data-yasharetype="link"
+  br/
+  #disqus_thread
