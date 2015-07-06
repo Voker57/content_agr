@@ -14,6 +14,9 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'slim-rails', '3.0.1'
 gem 'puma'
 gem 'cloudinary'
+
+gem 'clockwork'
+
 # parse
 gem 'nokogiri'
 gem 'mechanize', '2.7.2'
