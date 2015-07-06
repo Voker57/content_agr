@@ -20,6 +20,7 @@ gem 'mechanize', '2.7.2'
 # bugger
 group :development do
   gem 'byebug'
+  gem 'logger', '1.2.8'
   #gem 'pry-rails'
 end
 # Use Uglifier as compressor for JavaScript assets

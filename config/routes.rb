@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  namespace :admin do
+    resources :articles, :article_sources
+  end
   #resources :admin, only: [:new, :create, :destroy]
   #match 'singin',  to: 'admin#new',     via: 'get'
   #match 'singout', to: 'admin#destroy', via: 'delete'

@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Url:
+  = @article_source.url
+p
+  strong Title:
+  = @article_source.title
+p
+  strong Vk link:
+  = @article_source.vk_link
+p
+  strong Xpath:
+  = @article_source.xpath
+
+= link_to 'Edit', edit_admin_article_source_path(@article_source)
+'|
+= link_to 'Back', admin_article_sources_path
