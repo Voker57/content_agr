@@ -10,10 +10,10 @@ vk_groups = [ { name: 'Комсомольская правда',  link: 'http://
               { name: 'В Москве',              link: 'http://vk.com/newsmskcom'},
               { name: 'Российская газета',     link: 'http://vk.com/rgru'} ]
 
-
 vk_groups.each { | vk_group | VkGroup.create name: vk_group[:name], link: vk_group[:link] }
 
-source = [  { url: 'http://www.kp.ru/',             vk_link: 'https://vk.com/public15722194',   title: 'Комсомольская правда' },
+
+sources = [ { url: 'http://www.kp.ru/',             vk_link: 'https://vk.com/public15722194',   title: 'Комсомольская правда' },
             { url: 'http://moskva.bezformata.ru/',  vk_link: 'https://vk.com/moskvabezformata', title: 'Без формата' },
             { url: 'http://www.mk.ru/',             vk_link: 'https://vk.com/mk_ru',            title: 'Московский комсомолец' },
             { url: 'http://www.interfax.ru/',       vk_link: 'https://vk.com/interfaxru',       title: 'Интер факс' },
@@ -25,7 +25,7 @@ source = [  { url: 'http://www.kp.ru/',             vk_link: 'https://vk.com/pub
             { url: 'http://www.newsmsk.com/',       vk_link: 'https://vk.com/newsmskcom',       title: 'В Москве' },
             { url: 'http://www.rg.ru/',             vk_link: 'https://vk.com/rgru',             title: 'Российская газета' } ]
 
-source.each { | source | ArticleSource.create url: source[:url], vk_link: source[:vk_link], title: source[:title] }
+sources.each { | source | ArticleSource.create url: source[:url], vk_link: source[:vk_link], title: source[:title] }
 
 #@article = []
 
