@@ -13,6 +13,11 @@ vk_groups = [ { name: 'Комсомольская правда',  link: 'http://
 
 vk_groups.each { | vk_group | VkGroup.create name: vk_group[:name], link: vk_group[:link] }
 
+article_source = ArticleSource.create(  url: 'http://www.kp.ru/',
+                                        title: 'Title',
+                                        vk_link: 'https://vk.com/public15722194',
+                                        xpath: '//*[@id="content_news24"]/li[1]/a' )
+
 
 
 

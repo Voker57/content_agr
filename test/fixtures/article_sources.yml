@@ -6,11 +6,9 @@ one:
   title: MyString
   vk_link: MyString
   xpath: MyString
-  belongs_to: 
 
 two:
   url: MyString
   title: MyString
   vk_link: MyString
   xpath: MyString
-  belongs_to: 
