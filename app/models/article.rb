@@ -3,7 +3,6 @@ class Article < ActiveRecord::Base
   require 'rss'
   require 'open-uri'
   require 'rest-client'
-  require 'content_engine'
   has_many :category_articles
   has_many :categories, through: :category_articles
   belongs_to :article_source

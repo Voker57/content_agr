@@ -17,10 +17,6 @@ gem 'cloudinary'
 
 gem 'clockwork'
 
-gem 'content_engine',
-  :git => 'https://github.com/Fro0z1k/content_engine.git',
-  :branch => 'master'
-
 # parse
 gem 'nokogiri'
 gem 'mechanize', '2.7.2'
