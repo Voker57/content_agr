@@ -6,6 +6,4 @@ include Clockwork
 include Publish
 include Sort
 
-every( 10.second, 'Start Mechanize agent' )                 { Article.agent_session }
-every( 10.second, 'Sort according Like to the VKontakte' )  { Sort.puts }
-every( 10.second, 'Published Articles' )                    { Publish.publication }
+every( 1.hour, 'Start gem content_engine' ) { ContentEngine.work }

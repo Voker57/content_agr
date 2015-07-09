@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Fro0z1k/content_engine.git
-  revision: 5867079a93cd4e736262fb0a472f275b54164d9a
+  revision: 020e97b425c2d85fac7ae0e5caa533b27a21af6c
   branch: master
   specs:
-    content_engine (0.1.3)
+    content_engine (0.1.4)
 
 GEM
   remote: https://rubygems.org/
