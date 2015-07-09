@@ -13,28 +13,19 @@ vk_groups = [ { name: 'Комсомольская правда',  link: 'http://
 
 vk_groups.each { | vk_group | VkGroup.create name: vk_group[:name], link: vk_group[:link] }
 
-article_source = ArticleSource.create(  url: 'http://www.kp.ru/',
-                                        title: 'Title',
-                                        vk_link: 'https://vk.com/public15722194',
-                                        xpath: '//*[@id="content_news24"]/li[1]/a' )
+source = [  { url: 'http://www.kp.ru/',             vk_link: 'https://vk.com/public15722194',   title: 'Комсомольская правда' },
+            { url: 'http://moskva.bezformata.ru/',  vk_link: 'https://vk.com/moskvabezformata', title: 'Без формата' },
+            { url: 'http://www.mk.ru/',             vk_link: 'https://vk.com/mk_ru',            title: 'Московский комсомолец' },
+            { url: 'http://www.interfax.ru/',       vk_link: 'https://vk.com/interfaxru',       title: 'Интер факс' },
+            { url: 'http://tass.ru/',               vk_link: 'https://vk.com/tassagency',       title: 'ТАСС' },
+            { url: 'http://www.bravica.info/ru/',   vk_link: 'https://vk.com/bravica_inc',      title: 'Бравика' },
+            { url: 'http://vm.ru/',                 vk_link: 'https://vk.com/vechermoskwa',     title: 'Вечерняя Москва' },
+            { url: 'http://www.rosbalt.ru/',        vk_link: 'https://vk.com/rosbalt_ru',       title: 'РОСБАЛТ' },
+            { url: 'https://news.mail.ru/',         vk_link: 'https://vk.com/nowosti_mail_ru',  title: 'Mail Ru' },
+            { url: 'http://www.newsmsk.com/',       vk_link: 'https://vk.com/newsmskcom',       title: 'В Москве' },
+            { url: 'http://www.rg.ru/',             vk_link: 'https://vk.com/rgru',             title: 'Российская газета' } ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+article_sources = source.each { | source | ArticleSource.create url: source[:url], vk_link: source[:vk_link], title: source[:title] }
 
 #@article = []
 
