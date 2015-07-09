@@ -14,16 +14,6 @@ class Article < ActiveRecord::Base
     agent = Mechanize.new
   end
 
-  def self.vk_login
-    login_url = 'https://vk.com/'
-    agent = agent_session
-    page = agent.get( login_url )
-    login_form = page.form_with( method: 'POST' )
-    login_form.email = MY[0]
-    login_form.pass = MY[1]
-    page = login_form.submit
-  end
-
   def self.get_links
     links = VkGroup.with_links.pluck( :link )
     review = reload_news( links )
