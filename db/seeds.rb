@@ -25,7 +25,7 @@ source = [  { url: 'http://www.kp.ru/',             vk_link: 'https://vk.com/pub
             { url: 'http://www.newsmsk.com/',       vk_link: 'https://vk.com/newsmskcom',       title: 'В Москве' },
             { url: 'http://www.rg.ru/',             vk_link: 'https://vk.com/rgru',             title: 'Российская газета' } ]
 
-article_sources = source.each { | source | ArticleSource.create url: source[:url], vk_link: source[:vk_link], title: source[:title] }
+source.each { | source | ArticleSource.create url: source[:url], vk_link: source[:vk_link], title: source[:title] }
 
 #@article = []
 
