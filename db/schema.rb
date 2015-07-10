@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709180144) do
+ActiveRecord::Schema.define(version: 20150710135934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150709180144) do
     t.string   "xpath"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "articles", force: true do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150709180144) do
     t.datetime "updated_at"
     t.string   "preview_url"
     t.string   "main_category_title", default: "world"
+    t.integer  "article_source_id"
   end
 
   create_table "categories", force: true do |t|
