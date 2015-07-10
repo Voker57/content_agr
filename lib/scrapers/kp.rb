@@ -3,7 +3,6 @@ module Kp
 	def self.get_article_links
 		links = []
 		site_url = "http://www.kp.ru"
-		article_source = ArticleSource.where(url: site_url) || ArticleSource.new(url: site_url)
 		www = ScrapeUtils.new_mechanize
 		mainpage = www.get site_url
 		mainpage.search("ul[@id='content_news24']/li").each do |li|
