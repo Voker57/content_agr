@@ -19,6 +19,24 @@ module ContentEngine
 
     def publish_articles
     end
+    
+    def get_all_articles
+    	scraper_names = %w|kp|
+    	scraper_names.each do |n| get_articles n end
+    end
+    
+		def get_articles(scraper_name)
+			scraper = Scrapers.const_get(scraper_name.camelize)
+			article_source = ArticleSource.where(name: scraper_name).first || ArticleSource.new(name: scraper_name)
+			article_source.save! if article_source.new_record?
+			article_links = scraper.get_article_links
+			article_links.each do |link|
+				next if article_source.articles.where(source_url: link).first
+				article_data = scraper.get_article(link)
+				article = Article.new(article_title: article_data[:title], article_body: article_data[:text])
+				article.save!
+			end
+		end
 
   end
 end
