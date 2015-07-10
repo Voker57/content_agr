@@ -21,7 +21,7 @@ module ContentEngine
     end
     
     def get_all_articles
-    	scraper_names = %w|kp|
+    	scraper_names = %w|kp moskva_bezformata|
     	scraper_names.each do |n| get_articles n end
     end
     
@@ -33,7 +33,7 @@ module ContentEngine
 			article_links.each do |link|
 				next if article_source.articles.where(source_url: link).first
 				article_data = scraper.get_article(link)
-				article = Article.new(article_title: article_data[:title], article_body: article_data[:text])
+				article = article_source.articles.build(article_title: article_data[:title], article_body: article_data[:text], source_url: link)
 				article.save!
 			end
 		end
