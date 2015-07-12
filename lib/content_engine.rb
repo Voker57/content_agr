@@ -21,7 +21,7 @@ module ContentEngine
     end
     
     def get_all_articles
-    	scraper_names = %w|kp moskva_bezformata mk interfax tass vm rosbalt mailru|
+    	scraper_names = %w|kp moskva_bezformata mk interfax tass vm rosbalt mailru newsmsk|
     	scraper_names.each do |n| get_articles n end
     end
     
