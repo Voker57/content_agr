@@ -16,7 +16,9 @@ module Kp
 		article_page = www.get link
 		h1 = ""
 		article_page.at("h1").children.each {|c| if c.text? then h1 << c.to_s end}
-		return({title: h1.strip, text: article_page.at("div[@id='hypercontext']").inner_html})
+		images = []
+		images << article_page.at("div[@class='a_main-photo media img']//img")["src"] if article_page.at("div[@class='a_main-photo media img']//img")
+		return({title: h1.strip, text: article_page.at("div[@id='hypercontext']").inner_html, images: images})
 	end
 end
 end
