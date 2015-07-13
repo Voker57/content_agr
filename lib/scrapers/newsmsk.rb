@@ -16,6 +16,7 @@ module Scrapers::Newsmsk
 		www = ScrapeUtils.new_mechanize
 		article_page = www.get link
 		content = article_page.at("div[@class='_ga1_on_']").inner_html.encode("utf-8")
-		return({title: article_page.at("div[@class='news_head_inner']").inner_text.strip, text: content})
+		images = article_page.search("div[@class='article_text']//div[@class='image_link_holder']").map {|div| div["onclick"].scan(/open\('(.*?)'\)/)[0][0]}
+		return({title: article_page.at("div[@class='news_head_inner']").inner_text.strip, text: content, images: images})
 	end
 end
