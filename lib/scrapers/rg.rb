@@ -13,14 +13,15 @@ module Scrapers::Rg
 	def self.get_article(link)
 		www = ScrapeUtils.new_mechanize
 		article_page = www.get link
+		images = [article_page.at("img[@id='article_big_img']")["src"]] if article_page.at("img[@id='article_big_img']")
 		if article_page.at("div[@class='s-large-title']")
 			content = article_page.search("div[@class='s-large-announce-text']/p").to_s
-			return({title: article_page.at("div[@class='s-large-title']").inner_text.strip, text: content})
+			return({title: article_page.at("div[@class='s-large-title']").inner_text.strip, text: content, images: images})
 		elsif article_page.at("div[@class='content-box-item__info__head__title']")
-			return({title: article_page.at("div[@class='content-box-item__info__head__title']").inner_text.strip, text: article_page.search("div[@class='content-box-item__info__uannounce']/p").to_s})
+			return({title: article_page.at("div[@class='content-box-item__info__head__title']").inner_text.strip, text: article_page.search("div[@class='content-box-item__info__uannounce']/p").to_s, images: images})
 		else
 			content = article_page.search("div[@class='main-text']/p").to_s
-			return({title: article_page.at("h1").inner_text.strip, text: content})
+			return({title: article_page.at("h1").inner_text.strip, text: content, images: images})
 		end
 	end
 end
