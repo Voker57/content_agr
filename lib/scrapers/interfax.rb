@@ -16,6 +16,10 @@ module Scrapers::Interfax
 		www = ScrapeUtils.new_mechanize
 		article_page = www.get link
 		article_page.encoding = 'windows-1251'
-		return({title: article_page.at("h1[@class='textMTitle']").inner_text.strip, text: article_page.search("div[@itemprop='articleBody']/p").to_s.encode("utf-8")})
+		images = []
+		if article_page.at("div[@class='wrap']//img[@itemprop='contentUrl']")
+			images << URI.parse("http://www.interfax.ru").merge(article_page.at("div[@class='wrap']//img[@itemprop='contentUrl']")["src"]).to_s
+		end
+		return({title: article_page.at("h1[@class='textMTitle']").inner_text.strip, text: article_page.search("div[@itemprop='articleBody']/p").to_s.encode("utf-8"), images: images})
 	end
 end
