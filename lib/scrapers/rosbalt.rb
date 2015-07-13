@@ -15,7 +15,8 @@ module Scrapers::Rosbalt
 		www = ScrapeUtils.new_mechanize
 		article_page = www.get link
 		content = ""
+		images = article_page.search("div[@class='news_img_container_mat _ga1_off_']/img").map {|i| i["src"]}
 		article_page.at("div[@id='mat_cont']//article").children.each {|c| if c.name != "h1" then content << c.to_s end}
-		return({title: article_page.at("div[@id='mat_cont']//h1").inner_text.strip, text: content.gsub(/<script.*?<\/script>/m,"")})
+		return({title: article_page.at("div[@id='mat_cont']//h1").inner_text.strip, text: content.gsub(/<script.*?<\/script>/m,""), images: images})
 	end
 end
