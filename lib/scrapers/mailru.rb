@@ -14,6 +14,7 @@ module Scrapers::Mailru
 		www = ScrapeUtils.new_mechanize
 		article_page = www.get link
 		content = article_page.search("div[@class='js-newstext s-text']/index/p").to_s
-		return({title: article_page.at("h1/index").inner_text.strip, text: content})
+		images = article_page.search("a[@class='s-fotostripe__item__link js-preview-list__item']").map {|a| URI.parse(link).merge(a["data-original"].gsub(/\|.*$/, "")).to_s}
+		return({title: article_page.at("h1/index").inner_text.strip, text: content, images: images})
 	end
 end
