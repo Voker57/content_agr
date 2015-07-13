@@ -10,6 +10,7 @@ module Scrapers::Tass
 	def self.get_article(link)
 		www = ScrapeUtils.new_mechanize
 		article_page = www.get link
-		return({title: article_page.at("h1[@class='b-material__title']").inner_text.strip, text: article_page.search("div[@class='b-material-text__l']/p").to_s})
+		images = article_page.search("a[@class='b-gallery-widget-item__pic']/img").map {|i| i["src"]}
+		return({title: article_page.at("h1[@class='b-material__title']").inner_text.strip, text: article_page.search("div[@class='b-material-text__l']/p").to_s, images: images})
 	end
 end
