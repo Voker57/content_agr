@@ -6,6 +6,7 @@ class Article < ActiveRecord::Base
   has_many :category_articles
   has_many :categories, through: :category_articles
   belongs_to :article_source
+  has_many :article_images, dependent: :destroy
 
   # ACCOUNT = ['danil3@i.ua', 'ytrhbx']
 
