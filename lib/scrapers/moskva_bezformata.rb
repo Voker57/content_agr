@@ -20,6 +20,10 @@ module Scrapers::MoskvaBezformata
 			article_page.at("index").children.each {|c| if c.name != "div" && !c.comment? then s << c.to_s end}
 			s
 		end
-		return({title: article_page.at("h1").inner_text.strip, text: content})
+		images = []
+		if article_page.at("div[@class='topicimage_box']")
+			images << article_page.at("div[@class='topicimage_box']/a")["href"]
+		end
+		return({title: article_page.at("h1").inner_text.strip, text: content, images: images})
 	end
 end
