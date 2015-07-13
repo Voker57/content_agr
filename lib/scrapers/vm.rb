@@ -13,6 +13,7 @@ module Scrapers::Vm
 	def self.get_article(link)
 		www = ScrapeUtils.new_mechanize
 		article_page = www.get link
-		return({title: article_page.at("article[@class='article 111']//h1").inner_text.strip, text: article_page.at("article[@class='article 111']//div[@class='content clearfix']").inner_html})
+		images = article_page.search("a[@class='gallery-image-link']").map {|a| a["href"]}
+		return({title: article_page.at("article[@class='article 111']//h1").inner_text.strip, text: article_page.at("article[@class='article 111']//div[@class='content clearfix']").inner_html, images: images})
 	end
 end
